@@ -13,7 +13,7 @@ This work is a graduation thesis for the course of chemical engineering at the P
 
 ## How this project works.
 
-This repository contains a series of python's colab notebooks(6), each with a specific responsability for the data analysis, the relashionship between the files is shown on the figure below.
+This repository contains a series of python's colab notebooks(5), each with a specific responsability for the data analysis, the relashionship between the files is shown on the figure below.
 
 ![Alt text](notebooks_correlations.png)
 
@@ -23,6 +23,9 @@ This repository contains a series of python's colab notebooks(6), each with a sp
 -   `oversampling.ipynb`: Uses SMOTE(Synthetic Minority Oversampling Technique) tecnique for oversampling with artificial data and uses real data from 3W to increase number of 0 classes. Creates splitted datasets for artificial and real oversample, to be analysed individually.
 -   `ann_artificial_data_oversampled.ipynb`: Creates ANN for  dataset oversampled with artificial data.
 -   `ann_real_data_oversampled.ipynb`: Creates ANN for dataset oversampled with real data.
+
+Obs: The `utils.py` provides some code to be shared across the notebooks.
+
 
 ## Data Treatment:
 One of the most important steps of data science is data treatment, therefore the `data_treatment.ipynb` has the responsability to investigate over the data acquired and remove or fill out, if necessary, missing data. 
