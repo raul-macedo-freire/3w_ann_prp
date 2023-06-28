@@ -11,9 +11,9 @@ from sklearn.metrics import classification_report,accuracy_score,confusion_matri
 
 
 
-def save_csv_if_doesnt_exist(df:DataFrame,file_name:str):
+def save_csv_if_doesnt_exist(df:DataFrame,file_name:str,**kwargs):
     if not isfile(file_name):
-        df.to_csv(file_name)
+        df.to_csv(file_name,**kwargs)
     return
 
 def train_and_save_mlp(parameters, X, Y, file_name):
