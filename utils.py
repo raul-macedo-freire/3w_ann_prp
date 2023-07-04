@@ -1,4 +1,5 @@
 import pickle
+import pandas as pd
 import seaborn as sns
 import matplotlib as plt
 from numpy import ndarray
@@ -37,6 +38,21 @@ def train_model_if_doesnt_exist(X:ndarray,Y:ndarray,parameters:dict,file_name:st
         model = pickle.load(f)
     return model
 
+def performance_metrics(Y_true,Y_pred):
+    tn, fp, fn, tp = confusion_matrix(Y_true, Y_pred).ravel()
+    recall = tp / (tp+fn)
+    precision = tp / (tp+fp)
+    specificity = tn / (tn+fp)
+    accuracy = (tp+tn) / (tp+tn+fp+fn)
+    f1_score = tp / (tp + ((fn+fp)/2))
+    data = {
+        'recall':recall,
+        'precision':precision,
+        'specificity':specificity,
+        'accuracy':accuracy,
+        'f1_score':f1_score,
+    }
+    return pd.DataFrame(data)
 
 def plot_confusion_matrix(observed_data:ndarray,predicted_data:ndarray):
     mat = confusion_matrix(observed_data,predicted_data)
