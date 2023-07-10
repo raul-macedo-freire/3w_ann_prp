@@ -35,6 +35,8 @@ From the feature selection and feature extraction methods performed, 3 possible 
 3. Case 3: All the features, except for P-TPT and P-MON-CKP (and T-JUS-CKGL), should be considered.
 Obs: T-JUS-CKGL was removed from all analysis since it did not have data that could be of value for the analysis (all values were zero).
 
+**Disclaimer:** Case 2 has been unconsidered, since two interpretations of Lasso could produce confusion for interpretation and this case has not improved signicantly the results of ANNs models. 
+
 ## How to run:
 
 This project was thought to run locally with, expecting to present a better performance in local machines, however it's possible to run it on a google colab environment, however some changes should be considered:
